@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Monitoring System</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <div class="title-row">
+                <span class="weather-icon">☁️</span>
+                <h1>Weather Monitoring System</h1>
+            </div>
+            <p>ESP32 Environmental Monitoring Station</p>
+        </header>
+
+        <section class="status-bar">
+            <span id="connection-dot">●</span>
+            <span id="connection-status">Connecting...</span>
+            <span class="device">Device: <strong id="device-id">--</strong></span>
+        </section>
+
+        <section class="cards">
+            <article class="card">
+                <div class="icon">🌡️</div>
+                <h2>Temperature</h2>
+                <div class="value" id="temperature">--</div>
+                <span>°C</span>
+            </article>
+
+            <article class="card">
+                <div class="icon">💧</div>
+                <h2>Humidity</h2>
+                <div class="value" id="humidity">--</div>
+                <span>%</span>
+            </article>
+
+            <article class="card">
+                <div class="icon">🌬️</div>
+                <h2>Pressure</h2>
+                <div class="value" id="pressure">--</div>
+                <span>hPa</span>
+            </article>
+
+            <article class="card">
+                <div class="icon">🔥</div>
+                <h2>Gas Resistance</h2>
+                <div class="value" id="gas-resistance">--</div>
+                <span>kΩ</span>
+            </article>
+
+            <article class="card">
+                <div class="icon">🌧️</div>
+                <h2>Rain Sensor</h2>
+                <div class="value" id="rain-raw">--</div>
+                <span>ADC</span>
+            </article>
+
+            <article class="card">
+                <div class="icon">⚡</div>
+                <h2>Rain Voltage</h2>
+                <div class="value" id="rain-voltage">--</div>
+                <span>V</span>
+            </article>
+        </section>
+
+        <section class="rain-status">
+            <h2>Current Rain Status</h2>
+            <div id="rain-status">--</div>
+        </section>
+
+        <section class="system-info">
+            <h2>System Information</h2>
+            <p>Last Update: <strong id="timestamp">--</strong></p>
+            <p>Data Source: <strong>ESP32 → MQTT → Flask → SQLite</strong></p>
+            <p>Sensors: <strong>BME680 + Rain Sensor</strong></p>
+        </section>
+    </main>
+
+    <script src="/js/app.js"></script>
+</body>
+</html>
